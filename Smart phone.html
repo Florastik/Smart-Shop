@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartShop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Смартфони на будь-який смак!</h1>
+        <nav>
+            <ul>
+                <li><a href="#catalog">Каталог</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="catalog">
+            <h2>Наші iPhone</h2>
+            <div class="product-list">
+                <div class="product">
+                    <h3><a href="#" onclick="showDetails('iphone12')">iPhone 12</a></h3>
+                    <p>Ціна: 22000 грн</p>
+                    <button onclick="addToCart('iPhone 12', 22000)">Додати до кошика</button>
+                    <img src="https://cdn.new-brz.net/app/public/models/MJQF3FS-A/large/w/210421160014096622.webp" alt="iPhone 12">
+                </div>
+
+                <div class="product">
+                    <h3><a href="#" onclick="showDetails('iphone13')">iPhone 13</a></h3>
+                    <p>Ціна: 25000 грн</p>
+                    <button onclick="addToCart('iPhone 13', 25000)">Додати до кошика</button>
+                    <img src="https://apple-mania.com.ua/media/catalog/product/cache/e026f651b05122a6916299262b60c47d/_/_/__2021-09-15_154443_1_1.webp" alt="iPhone 13">
+                </div>
+
+                <div class="product">
+                    <h3><a href="#" onclick="showDetails('iphone14')">iPhone 14</a></h3>
+                    <p>Ціна: 30000 грн</p>
+                    <button onclick="addToCart('iPhone 14', 30000)">Додати до кошика</button>
+                    <img src="https://cdn1.it4profit.com/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083514331045/230309170040453644.png@webp" alt="iPhone 14">
+                </div>
+
+                <div class="product">
+                    <h3><a href="#" onclick="showDetails('iphone14pro')">iPhone 14 Pro</a></h3>
+                    <p>Ціна: 38000 грн</p>
+                    <button onclick="addToCart('iPhone 14 Pro', 38000)">Додати до кошика</button>
+                    <img src="https://gstore.ua/content/images/24/480x480l50nn0/apple-iphone-14-pro-128gb-gold-mq083-15027010600569.png" alt="iPhone 14 Pro">
+                </div>
+
+                <div class="product">
+                    <h3><a href="#" onclick="showDetails('iphone13mini')">iPhone 13 Mini</a></h3>
+                    <p>Ціна: 21000 грн</p>
+                    <button onclick="addToCart('iPhone 13 Mini', 21000)">Додати до кошика</button>
+                    <img src="https://cdn.new-brz.net/app/public/models/MLK13HU-A/large/w/210927160056549487.webp" alt="iPhone 13 Mini">
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Про нас</h2>
+            <p>Ласкаво просимо до SmartShop! Ми - команда, що спеціалізується на продажу сучасних смартфонів та гаджетів найвищої якості. Наша мета - надати клієнтам найкращі технології за доступними цінами.</p>
+            <p>У нашому магазині ви знайдете широкий асортимент смартфонів, які задовольнять навіть найвибагливіших покупців. Ми прагнемо забезпечити високу якість обслуговування та зручність покупки.</p>
+            <p>Приєднуйтесь до нашої спільноти та насолоджуйтеся світом інновацій разом з нами!</p>
+        </section>
+
+        <section id="contact">
+            <h2>Контакти</h2>
+            <p>Email: davidonlayn@gmail.com</p>
+            <p>Телефон: +380 67 750 84 33</p>
+        </section>
+
+        <section id="cart">
+            <h2>Ваш кошик</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total">Разом: 0 грн</p>
+            <button onclick="checkout()">Оформити замовлення</button>
+        </section>
+
+        <section id="product-details" style="display: none;">
+            <h2>Деталі продукту</h2>
+            <div id="details"></div>
+            <button onclick="hideDetails()">Закрити</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SmartShop. Усі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

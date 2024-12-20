@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Деталі продукту</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 id="product-name"></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Каталог</a></li>
+                <li><a href="#about">Про нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="product-details"></div>
+        <button onclick="goBack()">Назад до каталогу</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SmartShop. Усі права захищені.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get('product');
+
+        const productDetails = {
+            iphone12: {
+                name: "iPhone 12",
+                description: "6.1-дюймовий екран Super Retina XDR, A14 Bionic, 12 МП подвійна камера.",
+                price: "22000 грн",
+                image: "https://cdn.new-brz.net/app/public/models/MJQF3FS-A/large/w/210421160014096622.webp"
+            },
+            iphone13: {
+                name: "iPhone 13",
+                description: "6.1-дюймовий екран Super Retina XDR, A15 Bionic, 12 МП подвійна камера, покращена автономність.",
+                price: "25000 грн",
+                image: "https://apple-mania.com.ua/media/catalog/product/cache/e026f651b05122a6916299262b60c47d/_/_/__2021-09-15_154443_1_1.webp"
+            },
+            iphone14: {
+                name: "iPhone 14",
+                description: "6.1-дюймовий екран Super Retina XDR, A16 Bionic, нова камера для нічної зйомки.",
+                price: "30000 грн",
+                image: "https://cdn1.it4profit.com/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083514331045/230309170040453644.png@webp"
+            },
+            iphone14pro: {
+                name: "iPhone 14 Pro",
+                description: "6.1-дюймовий екран Super Retina XDR, A16 Bionic, трійна камера з високою роздільною здатністю.",
+                price: "38000 грн",
+                image: "https://gstore.ua/content/images/24/480x480l50nn0/apple-iphone-14-pro-128gb-gold-mq083-15027010600569.png"
+            },
+            iphone13mini: {
+                name: "iPhone 13 Mini",
+                description: "5.4-дюймовий екран Super Retina XDR, A15 Bionic, компактний дизайн та потужні функції.",
+                price: "21000 грн",
+                image: "https://cdn.new-brz.net/app/public/models/MLK13HU-A/large/w/210927160056549487.webp"
+            }
+        };
+
+        if (product && productDetails[product]) {
+            const details = productDetails[product];
+            document.getElementById('product-name').innerText = details.name;
+            document.getElementById('product-details').innerHTML = `
+                <img src="${details.image}" alt="${details.name}" />
+                <p>${details.description}</p>
+                <p>Ціна: ${details.price}</p>
+            `;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
